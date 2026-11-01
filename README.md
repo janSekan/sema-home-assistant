@@ -92,5 +92,5 @@ Fixtures and the public demo token are deliberately fictional.
 
 ## License
 
-The repository owner has not selected a license yet. No open-source license is
-granted by this repository at this stage. License selection remains pending.
+This integration is distributed under the [MIT License](LICENSE).
+Copyright (c) 2026 janSekan.

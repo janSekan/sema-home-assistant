@@ -7,7 +7,8 @@ independent of SEMA device firmware versions.
 The default branch can be installed as a HACS custom repository. A GitHub Release
 has not been published by the metadata push. Before submitting to the default
 HACS catalog, verify successful HACS and hassfest runs, test HACS installation
-and upgrade, publish a full GitHub Release and complete the owner's license decision.
+and upgrade, and publish a full GitHub Release. The owner selected the MIT license;
+see [LICENSE](../LICENSE).
 No catalog submission is made automatically.
 
 Repository settings must include a description, searchable topics and enabled
@@ -17,8 +18,9 @@ custom-integration, heat-pump, sema.
 
 The first HACS Action run accepted hacs.json, manifest and local brand assets,
 but failed the description, topics and license checks. The owner explicitly
-deferred all three. The workflow deliberately keeps those checks enabled;
-metadata publication does not mean the complete HACS validation is green.
+initially deferred all three. The owner subsequently selected MIT and updated
+the repository's About fields. The workflow keeps all checks enabled; verify
+the latest Actions result before submitting to the catalog.
 
 The HACS workflow runs without ignored checks and without permission to post PR
 comments. Its wrapper is pinned to a commit; the upstream HACS Docker image uses

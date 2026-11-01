@@ -17,5 +17,5 @@ Never publish tokens, HA configuration/.storage, databases, SSH keys, internal
 network addresses, deployment backups or personal data. Fixtures are synthetic.
 Keep diagnostic exports allowlisted and free of raw settings or schedules.
 
-The owner explicitly deferred choosing a license. Do not add one implicitly.
+The owner explicitly selected the MIT license; preserve LICENSE and its notices.
 HACS metadata publication is not admission to HACS defaults or HA Core.

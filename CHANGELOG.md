@@ -9,4 +9,4 @@
 - HACS metadata and validation workflows; no catalog submission or GitHub Release yet.
 - Mock/HTTP and HA-native tests; tested with Core 2026.9.4 and one real SEMA device.
 
-License selection is deferred by the owner.
+The owner selected the MIT license; see LICENSE.
