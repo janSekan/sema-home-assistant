@@ -15,6 +15,11 @@ Issues. Suggested description: Local read-only Home Assistant integration for
 SEMA heat pump devices. Suggested topics: home-assistant, hacs,
 custom-integration, heat-pump, sema.
 
+The first HACS Action run accepted hacs.json, manifest and local brand assets,
+but failed the description, topics and license checks. The owner explicitly
+deferred all three. The workflow deliberately keeps those checks enabled;
+metadata publication does not mean the complete HACS validation is green.
+
 The HACS workflow runs without ignored checks and without permission to post PR
 comments. Its wrapper is pinned to a commit; the upstream HACS Docker image uses
 the maintained `main` tag. Hassfest validates with the documented pinned Core
