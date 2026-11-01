@@ -1,0 +1,26 @@
+{
+  "api_version": 1,
+  "device_uid": "00000000-0000-4000-8000-000000000001",
+  "generated_at": "2026-11-01T12:00:00Z",
+  "observed_at": "2026-11-01T12:00:00Z",
+  "pump_available": true,
+  "temperatures": {
+    "outdoor_temp": 5.5,
+    "indoor_temp": 22.3,
+    "water_temp": 48.1,
+    "heat_temp": 30.2,
+    "equitherm_temp": 31.0,
+    "exchanger_temp": 33.1,
+    "e_temp": null,
+    "f_temp": null,
+    "g_temp": null
+  },
+  "power_percent": 35.0,
+  "states": {
+    "heating": true,
+    "dhw": false,
+    "defrost": false,
+    "fault": false
+  },
+  "errors": []
+}

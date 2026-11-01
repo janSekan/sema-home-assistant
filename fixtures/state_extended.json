@@ -1,0 +1,77 @@
+{
+  "api_version": 1,
+  "device_uid": "00000000-0000-4000-8000-000000000001",
+  "generated_at": "2026-11-01T12:00:00Z",
+  "observed_at": "2026-11-01T12:00:00Z",
+  "pump_available": true,
+  "temperatures": {
+    "outdoor_temp": 5.5,
+    "indoor_temp": 22.3,
+    "water_temp": 48.1,
+    "heat_temp": 30.2,
+    "equitherm_temp": 31.0,
+    "exchanger_temp": 33.1,
+    "e_temp": null,
+    "f_temp": null,
+    "g_temp": null
+  },
+  "power_percent": 35.0,
+  "states": {
+    "heating": true,
+    "dhw": false,
+    "defrost": false,
+    "fault": false,
+    "power_on": true,
+    "setback": false,
+    "high_tariff": false
+  },
+  "errors": [],
+  "modes": {
+    "operating_mode": "heating",
+    "season": "winter",
+    "activity": "heating",
+    "heat_source": "compressor",
+    "dhw_mode": "standby"
+  },
+  "configuration": {
+    "available": true,
+    "observed_at": "2026-11-01T12:00:00Z",
+    "max_age_seconds": 900,
+    "values": {
+      "reference_temp": 21,
+      "min_indoor_cool": 20,
+      "max_indoor_heat": 20,
+      "min_water_temp": 45,
+      "max_water_temp": 50,
+      "cooling_water_temp": 20,
+      "bivalent_temp": -10,
+      "curve_minus20": 20,
+      "curve_minus12": 20,
+      "curve_minus4": 20,
+      "curve_plus4": 20,
+      "curve_plus12": 20,
+      "curve_plus20": 20,
+      "setback_heat": 2,
+      "setback_cool": 3,
+      "limit_water_percent": 100,
+      "limit_heat_percent": 80,
+      "limit_cool_percent": 10,
+      "regulation_constant": 4,
+      "dhw_time_limit_minutes": 180
+    },
+    "schedule": {
+      "mon": [
+        {
+          "from": "06:00",
+          "to": "08:00"
+        }
+      ],
+      "tue": [],
+      "wed": [],
+      "thu": [],
+      "fri": [],
+      "sat": [],
+      "sun": []
+    }
+  }
+}

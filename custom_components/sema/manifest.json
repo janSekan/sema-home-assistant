@@ -1,0 +1,17 @@
+{
+  "domain": "sema",
+  "name": "SEMA",
+  "codeowners": [
+    "@janSekan"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/janSekan/sema-home-assistant",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/janSekan/sema-home-assistant/issues",
+  "requirements": [],
+  "version": "0.1.0",
+  "zeroconf": [
+    "_sema._tcp.local."
+  ]
+}

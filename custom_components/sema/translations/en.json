@@ -1,0 +1,256 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect SEMA",
+        "description": "Enter the local SEMA address, including http:// or https://, and the dedicated Home Assistant token. Use a trusted LAN when connecting over HTTP.",
+        "data": {
+          "host": "SEMA address",
+          "access_token": "Home Assistant token"
+        }
+      },
+      "reconfigure": {
+        "title": "Change SEMA connection",
+        "description": "Change the address of the same SEMA device. Leave the token empty to keep the current one.",
+        "data": {
+          "host": "SEMA address",
+          "access_token": "New token (optional)"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Renew SEMA authentication",
+        "description": "Enter a new Home Assistant token for the same SEMA device. Update its address if it has changed.",
+        "data": {
+          "host": "SEMA address",
+          "access_token": "New Home Assistant token"
+        }
+      },
+      "discovery_confirm": {
+        "title": "Discovered SEMA device",
+        "description": "SEMA was found at {host}. Enter its dedicated Home Assistant token. Use a trusted LAN when connecting over HTTP.",
+        "data": {
+          "access_token": "Home Assistant token"
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Enter a full HTTP(S) address without a path, query or login credentials.",
+      "invalid_auth": "The token is invalid, revoked, or Home Assistant access is disabled on SEMA.",
+      "cannot_connect": "Cannot connect to SEMA. Check the address and network connection.",
+      "unsupported_version": "This device does not provide the supported SEMA API v1. A compatible device firmware is required.",
+      "invalid_response": "SEMA returned an invalid API response.",
+      "identity_mismatch": "The info and state endpoints returned different device identities.",
+      "rate_limited": "SEMA is limiting requests. Wait before trying again.",
+      "discovery_mismatch": "The authenticated API belongs to a different device than the network announcement. Nothing was added; verify the address and use manual setup."
+    },
+    "abort": {
+      "already_configured": "This SEMA device is already configured. Use Reconfigure to change its address or token.",
+      "unique_id_mismatch": "This address belongs to a different SEMA device. The existing configuration was not changed.",
+      "invalid_discovery": "Invalid or unsupported SEMA network announcement. You can add the device manually."
+    },
+    "flow_title": "{name}"
+  },
+  "entity": {
+    "sensor": {
+      "outdoor_temp": {
+        "name": "Outdoor temperature"
+      },
+      "indoor_temp": {
+        "name": "Indoor temperature"
+      },
+      "water_temp": {
+        "name": "DHW temperature"
+      },
+      "heat_temp": {
+        "name": "Heating temperature"
+      },
+      "equitherm_temp": {
+        "name": "Requested heating temperature"
+      },
+      "exchanger_temp": {
+        "name": "Exchanger temperature"
+      },
+      "e_temp": {
+        "name": "Temperature E"
+      },
+      "f_temp": {
+        "name": "Temperature F"
+      },
+      "g_temp": {
+        "name": "Temperature G"
+      },
+      "power_percent": {
+        "name": "Power percentage"
+      },
+      "observed_at": {
+        "name": "Last observation attempt"
+      },
+      "reference_temp": {
+        "name": "Heating reference temperature"
+      },
+      "min_indoor_cool": {
+        "name": "Minimum indoor cooling temperature"
+      },
+      "max_indoor_heat": {
+        "name": "Maximum indoor heating temperature"
+      },
+      "min_water_temp": {
+        "name": "Minimum DHW temperature"
+      },
+      "max_water_temp": {
+        "name": "Maximum DHW temperature"
+      },
+      "regulation_constant": {
+        "name": "Regulation constant"
+      },
+      "limit_water_percent": {
+        "name": "DHW power limit"
+      },
+      "limit_heat_percent": {
+        "name": "Heating power limit"
+      },
+      "limit_cool_percent": {
+        "name": "Cooling power limit"
+      },
+      "cooling_water_temp": {
+        "name": "Cooling water setpoint"
+      },
+      "bivalent_temp": {
+        "name": "Bivalent temperature"
+      },
+      "dhw_time_limit_minutes": {
+        "name": "DHW heating time limit"
+      },
+      "setback_heat": {
+        "name": "Heating setback amount"
+      },
+      "setback_cool": {
+        "name": "Cooling setback amount"
+      },
+      "setback_schedule": {
+        "name": "Setback interval count"
+      },
+      "configuration_observed_at": {
+        "name": "Last configuration observation attempt"
+      },
+      "operating_mode": {
+        "name": "Configured heat pump mode",
+        "state": {
+          "heating": "Heating",
+          "cooling": "Cooling"
+        }
+      },
+      "season": {
+        "name": "Season mode",
+        "state": {
+          "summer": "Summer",
+          "winter": "Winter"
+        }
+      },
+      "activity": {
+        "name": "Current operating state",
+        "state": {
+          "heating": "Heating",
+          "cooling": "Cooling",
+          "off": "Off",
+          "defrost": "Defrosting",
+          "fault": "Fault"
+        }
+      },
+      "heat_source": {
+        "name": "Reported heat source",
+        "state": {
+          "compressor": "Compressor",
+          "bivalent_1": "Bivalent 1",
+          "bivalent_2": "Bivalent 2",
+          "summer": "Summer mode"
+        }
+      },
+      "dhw_mode": {
+        "name": "DHW operating state",
+        "state": {
+          "standby": "Standby",
+          "heating": "DHW heating",
+          "electric_heating": "Electric DHW heating"
+        }
+      },
+      "curve_minus20": {
+        "name": "Heating curve at -20 °C outside"
+      },
+      "curve_minus12": {
+        "name": "Heating curve at -12 °C outside"
+      },
+      "curve_minus4": {
+        "name": "Heating curve at -4 °C outside"
+      },
+      "curve_plus4": {
+        "name": "Heating curve at +4 °C outside"
+      },
+      "curve_plus12": {
+        "name": "Heating curve at +12 °C outside"
+      },
+      "curve_plus20": {
+        "name": "Heating curve at +20 °C outside"
+      }
+    },
+    "binary_sensor": {
+      "heating": {
+        "name": "Heating (derived)",
+        "state": {
+          "off": "Inactive",
+          "on": "Active"
+        }
+      },
+      "dhw": {
+        "name": "DHW heating",
+        "state": {
+          "off": "Inactive",
+          "on": "Active"
+        }
+      },
+      "defrost": {
+        "name": "Defrosting"
+      },
+      "fault": {
+        "name": "Fault"
+      },
+      "sema_available": {
+        "name": "SEMA API connection"
+      },
+      "pump_available": {
+        "name": "Heat pump connection"
+      },
+      "snapshot_fresh": {
+        "name": "Snapshot fresh"
+      },
+      "power_on": {
+        "name": "Heat pump enabled",
+        "state": {
+          "on": "Enabled",
+          "off": "Disabled"
+        }
+      },
+      "setback": {
+        "name": "Temperature setback",
+        "state": {
+          "on": "Active",
+          "off": "Inactive"
+        }
+      },
+      "high_tariff": {
+        "name": "High tariff",
+        "state": {
+          "on": "Active",
+          "off": "Inactive"
+        }
+      },
+      "configuration_fresh": {
+        "name": "Configuration fresh",
+        "state": {
+          "on": "Fresh",
+          "off": "Not fresh"
+        }
+      }
+    }
+  }
+}

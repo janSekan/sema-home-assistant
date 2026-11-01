@@ -1,0 +1,27 @@
+{
+  "api_version": 1,
+  "device_uid": "00000000-0000-4000-8000-000000000001",
+  "device_id": "sema-demo-001",
+  "name": "SEMA demo – fiktívna jednotka",
+  "manufacturer": "SEMA",
+  "model": "Development fixture",
+  "firmware_version": "development-fixture",
+  "capabilities": [
+    "temperatures.outdoor_temp",
+    "temperatures.indoor_temp",
+    "temperatures.water_temp",
+    "temperatures.heat_temp",
+    "temperatures.equitherm_temp",
+    "temperatures.exchanger_temp",
+    "temperatures.e_temp",
+    "temperatures.f_temp",
+    "temperatures.g_temp",
+    "power_percent",
+    "states.heating",
+    "states.dhw",
+    "states.defrost",
+    "states.fault"
+  ],
+  "recommended_poll_interval_seconds": 30,
+  "max_age_seconds": 60
+}

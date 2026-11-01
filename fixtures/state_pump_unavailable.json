@@ -1,0 +1,31 @@
+{
+  "api_version": 1,
+  "device_uid": "00000000-0000-4000-8000-000000000001",
+  "generated_at": "2026-11-01T12:00:00Z",
+  "observed_at": null,
+  "pump_available": false,
+  "temperatures": {
+    "outdoor_temp": null,
+    "indoor_temp": null,
+    "water_temp": null,
+    "heat_temp": null,
+    "equitherm_temp": null,
+    "exchanger_temp": null,
+    "e_temp": null,
+    "f_temp": null,
+    "g_temp": null
+  },
+  "power_percent": null,
+  "states": {
+    "heating": null,
+    "dhw": null,
+    "defrost": null,
+    "fault": null
+  },
+  "errors": [
+    {
+      "code": "pump_unavailable",
+      "message": "Fiktívny výpadok komunikácie s čerpadlom."
+    }
+  ]
+}

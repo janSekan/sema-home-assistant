@@ -1,0 +1,7 @@
+# Run official hassfest from the pinned HA Core 2026.10.4 source checkout.
+# Kept separate from HA-native tests targeting Core 2026.9.4.
+homeassistant==2026.10.4
+infrared-protocols==10.1.0
+PyGithub==2.10.0
+ruff==0.16.9
+tqdm==4.70.1

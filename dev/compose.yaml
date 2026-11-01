@@ -1,0 +1,36 @@
+name: sema-ha-dev
+
+services:
+  homeassistant:
+    image: ghcr.io/home-assistant/home-assistant:2026.9.4
+    volumes:
+      - ha-config:/config
+      - ./ha-minimal.yaml:/config/configuration.yaml:ro
+      - ../custom_components/sema:/config/custom_components/sema:ro
+    ports:
+      - "127.0.0.1:18123:8123"
+    networks:
+      - test
+    stop_grace_period: 60s
+
+  mock:
+    image: ghcr.io/home-assistant/home-assistant:2026.9.4
+    entrypoint: ["python3", "/sim/tools/mock_device.py"]
+    # Shared network namespace makes the loopback-only mock reachable from HA.
+    network_mode: service:homeassistant
+    depends_on:
+      - homeassistant
+    volumes:
+      - ../tools:/sim/tools:ro
+      - ../fixtures:/sim/fixtures:ro
+    read_only: true
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+
+networks:
+  test:
+    internal: true
+
+volumes:
+  ha-config:

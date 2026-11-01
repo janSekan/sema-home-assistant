@@ -1,0 +1,11 @@
+# Minimal test instance: no discovery, hardware access or production config.
+homeassistant:
+  name: SEMA development
+  time_zone: Europe/Bratislava
+
+frontend:
+config:
+http:
+history:
+logbook:
+recorder:

@@ -1,0 +1,2 @@
+# Same aiohttp version as the initial HA Core 2026.9.4 target.
+aiohttp==3.14.3

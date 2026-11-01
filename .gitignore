@@ -1,0 +1,37 @@
+# Local secrets and HA runtime
+.env
+.env.*
+!.env.example
+secrets.yaml
+configuration.yaml
+.storage/
+config/
+ha-config/
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite3-*
+*.pem
+*.key
+*.p12
+*.pfx
+*.tar.gz
+*.zip
+backups/
+# Python/tools
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+# Optional official validator checkout used by CI/local checks
+hassfest-core/
+# Editor/system
+.vscode/
+.idea/
+.DS_Store

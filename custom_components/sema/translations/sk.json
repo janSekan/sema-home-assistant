@@ -1,0 +1,256 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Pripojiť SEMA",
+        "description": "Zadaj lokálnu adresu SEMA vrátane http:// alebo https:// a samostatný token pre Home Assistant. Pri HTTP používaj dôveryhodnú LAN.",
+        "data": {
+          "host": "Adresa SEMA",
+          "access_token": "Token pre Home Assistant"
+        }
+      },
+      "reconfigure": {
+        "title": "Zmeniť pripojenie SEMA",
+        "description": "Zmeň adresu tej istej jednotky SEMA. Ak chceš ponechať súčasný token, nechaj pole tokenu prázdne.",
+        "data": {
+          "host": "Adresa SEMA",
+          "access_token": "Nový token (voliteľné)"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Obnoviť prihlásenie SEMA",
+        "description": "Zadaj nový token pre Home Assistant tej istej jednotky SEMA. Ak sa zmenila jej adresa, uprav ju.",
+        "data": {
+          "host": "Adresa SEMA",
+          "access_token": "Nový token pre Home Assistant"
+        }
+      },
+      "discovery_confirm": {
+        "title": "Nájdené zariadenie SEMA",
+        "description": "SEMA bola nájdená na adrese {host}. Zadaj jej samostatný token pre Home Assistant. Pri HTTP používaj dôveryhodnú LAN.",
+        "data": {
+          "access_token": "Token pre Home Assistant"
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "Zadaj úplnú HTTP(S) adresu bez cesty, parametrov a prihlasovacích údajov.",
+      "invalid_auth": "Token je neplatný, odvolaný alebo je prístup pre Home Assistant na SEMA vypnutý.",
+      "cannot_connect": "K SEMA sa nedá pripojiť. Over adresu a sieťové spojenie.",
+      "unsupported_version": "Zariadenie neposkytuje podporované SEMA API v1. Vyžaduje sa kompatibilný firmvér zariadenia.",
+      "invalid_response": "SEMA vrátila neplatnú odpoveď API.",
+      "identity_mismatch": "Endpointy info a state vrátili rozdielnu identitu zariadenia.",
+      "rate_limited": "SEMA obmedzuje počet požiadaviek. Pred ďalším pokusom počkaj.",
+      "discovery_mismatch": "Overené API patrí inej jednotke než sieťový oznam. Zariadenie nebolo pridané; over adresu a použi ručné pridanie."
+    },
+    "abort": {
+      "already_configured": "Táto SEMA už je pridaná. Adresu alebo token zmeň cez Zmeniť konfiguráciu.",
+      "unique_id_mismatch": "Na tejto adrese je iná jednotka SEMA. Existujúca konfigurácia sa nezmenila.",
+      "invalid_discovery": "Neplatný alebo nepodporovaný sieťový oznam SEMA. Zariadenie môžeš pridať ručne."
+    },
+    "flow_title": "{name}"
+  },
+  "entity": {
+    "sensor": {
+      "outdoor_temp": {
+        "name": "Vonkajšia teplota"
+      },
+      "indoor_temp": {
+        "name": "Vnútorná teplota"
+      },
+      "water_temp": {
+        "name": "Teplota TÚV"
+      },
+      "heat_temp": {
+        "name": "Teplota kúrenia"
+      },
+      "equitherm_temp": {
+        "name": "Žiadaná teplota kúrenia"
+      },
+      "exchanger_temp": {
+        "name": "Teplota výmenníka"
+      },
+      "e_temp": {
+        "name": "Teplota E"
+      },
+      "f_temp": {
+        "name": "Teplota F"
+      },
+      "g_temp": {
+        "name": "Teplota G"
+      },
+      "power_percent": {
+        "name": "Percentuálny výkon"
+      },
+      "observed_at": {
+        "name": "Posledný pokus o pozorovanie"
+      },
+      "reference_temp": {
+        "name": "Referenčná teplota vykurovania"
+      },
+      "min_indoor_cool": {
+        "name": "Minimálna vnútorná teplota pre chladenie"
+      },
+      "max_indoor_heat": {
+        "name": "Maximálna vnútorná teplota pre kúrenie"
+      },
+      "min_water_temp": {
+        "name": "Minimálna teplota TÚV"
+      },
+      "max_water_temp": {
+        "name": "Maximálna teplota TÚV"
+      },
+      "regulation_constant": {
+        "name": "Regulačná konštanta"
+      },
+      "limit_water_percent": {
+        "name": "Obmedzenie výkonu TÚV"
+      },
+      "limit_heat_percent": {
+        "name": "Obmedzenie výkonu kúrenia"
+      },
+      "limit_cool_percent": {
+        "name": "Obmedzenie výkonu chladenia"
+      },
+      "cooling_water_temp": {
+        "name": "Nastavená teplota chladiacej vody"
+      },
+      "bivalent_temp": {
+        "name": "Bivalentná teplota"
+      },
+      "dhw_time_limit_minutes": {
+        "name": "Časový limit ohrevu TÚV"
+      },
+      "setback_heat": {
+        "name": "Veľkosť útlmu kúrenia"
+      },
+      "setback_cool": {
+        "name": "Veľkosť útlmu chladenia"
+      },
+      "setback_schedule": {
+        "name": "Počet intervalov útlmu"
+      },
+      "configuration_observed_at": {
+        "name": "Posledný pokus o čítanie nastavení"
+      },
+      "operating_mode": {
+        "name": "Nastavený režim čerpadla",
+        "state": {
+          "heating": "Kúrenie",
+          "cooling": "Chladenie"
+        }
+      },
+      "season": {
+        "name": "Sezónny režim",
+        "state": {
+          "summer": "Leto",
+          "winter": "Zima"
+        }
+      },
+      "activity": {
+        "name": "Aktuálny prevádzkový stav",
+        "state": {
+          "heating": "Kúrenie",
+          "cooling": "Chladenie",
+          "off": "Vypnuté",
+          "defrost": "Odmrazovanie",
+          "fault": "Porucha"
+        }
+      },
+      "heat_source": {
+        "name": "Hlásený zdroj ohrevu",
+        "state": {
+          "compressor": "Kompresor",
+          "bivalent_1": "Bivalent 1",
+          "bivalent_2": "Bivalent 2",
+          "summer": "Letný režim"
+        }
+      },
+      "dhw_mode": {
+        "name": "Stav ohrevu TÚV",
+        "state": {
+          "standby": "Pohotovosť",
+          "heating": "Ohrev TÚV",
+          "electric_heating": "Elektrický ohrev TÚV"
+        }
+      },
+      "curve_minus20": {
+        "name": "Krivka pri -20 °C vonku"
+      },
+      "curve_minus12": {
+        "name": "Krivka pri -12 °C vonku"
+      },
+      "curve_minus4": {
+        "name": "Krivka pri -4 °C vonku"
+      },
+      "curve_plus4": {
+        "name": "Krivka pri +4 °C vonku"
+      },
+      "curve_plus12": {
+        "name": "Krivka pri +12 °C vonku"
+      },
+      "curve_plus20": {
+        "name": "Krivka pri +20 °C vonku"
+      }
+    },
+    "binary_sensor": {
+      "heating": {
+        "name": "Kúrenie (odvodené)",
+        "state": {
+          "off": "Neaktívne",
+          "on": "Aktívne"
+        }
+      },
+      "dhw": {
+        "name": "Ohrev TÚV",
+        "state": {
+          "off": "Neaktívne",
+          "on": "Aktívne"
+        }
+      },
+      "defrost": {
+        "name": "Odmrazovanie"
+      },
+      "fault": {
+        "name": "Porucha"
+      },
+      "sema_available": {
+        "name": "Pripojenie k API SEMA"
+      },
+      "pump_available": {
+        "name": "Pripojenie čerpadla"
+      },
+      "snapshot_fresh": {
+        "name": "Čerstvosť snapshotu"
+      },
+      "power_on": {
+        "name": "Zapnutie čerpadla",
+        "state": {
+          "on": "Zapnuté",
+          "off": "Vypnuté"
+        }
+      },
+      "setback": {
+        "name": "Teplotný útlm",
+        "state": {
+          "on": "Aktívny",
+          "off": "Neaktívny"
+        }
+      },
+      "high_tariff": {
+        "name": "Vysoký tarif",
+        "state": {
+          "on": "Aktívny",
+          "off": "Neaktívny"
+        }
+      },
+      "configuration_fresh": {
+        "name": "Čerstvosť nastavení",
+        "state": {
+          "on": "Aktuálne",
+          "off": "Neaktuálne"
+        }
+      }
+    }
+  }
+}

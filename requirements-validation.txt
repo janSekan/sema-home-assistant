@@ -1,0 +1,3 @@
+# Versions used by HA Core 2026.10.4's development tooling.
+ruff==0.16.9
+mypy==2.3.1
